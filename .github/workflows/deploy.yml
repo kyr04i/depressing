@@ -1,0 +1,35 @@
+name: depressing_bot
+
+on:
+  push:
+    branches:
+      - main 
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up Rust
+      uses: actions-rs/toolchain@v1
+      with:
+        toolchain: stable
+        override: true
+
+    - name: Install dependencies
+      run: cargo build --release
+
+    - name: Run tests
+      run: cargo test
+
+    - name: Deploy
+      env:
+         TELEGRAM_BOT_TOKEN: ${{secrets.TELEGRAM_BOT_TOKEN}}
+      run: |
+        echo "Deploying depressing bot"
+        cd depressing_bot/target/debug
+        nohup ./depressing_bot 2>/dev/null &
+
