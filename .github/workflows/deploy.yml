@@ -27,9 +27,9 @@ jobs:
 
     - name: Deploy
       env:
-         TELEGRAM_BOT_TOKEN:  ${{ secrets.TELEGRAM_BOT_TOKEN }}
+         TELOXIDE_TOKEN:  ${{ secrets.TELOXIDE_TOKEN }}
       run: |
         echo "Deploying depressing bot"
         cd depressing_bot/target/debug
-        nohup ./depressing_bot 
+        nohup ./depressing_bot &
 
