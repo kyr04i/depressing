@@ -23,7 +23,7 @@ jobs:
       run: cd depressing_bot && cargo build --release
 
     - name: Run tests
-      run: depressing_bot && cargo test
+      run: cd depressing_bot && cargo test
 
     - name: Deploy
       env:
