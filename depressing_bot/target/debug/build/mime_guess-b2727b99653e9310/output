@@ -1,0 +1,1 @@
+cargo:rustc-env=MIME_TYPES_GENERATED_PATH=/home/kyrie/depressing/depressing_bot/target/debug/build/mime_guess-b2727b99653e9310/out/mime_types_generated.rs

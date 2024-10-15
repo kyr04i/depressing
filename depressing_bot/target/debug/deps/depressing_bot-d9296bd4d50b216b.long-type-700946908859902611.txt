@@ -1,0 +1,1 @@
+fn(teloxide::Bot, teloxide::prelude::Message, Command, Arc<std::sync::Mutex<HashMap<String, Deadline>>>) -> impl Future<Output = Result<(), RequestError>> {handle_command}

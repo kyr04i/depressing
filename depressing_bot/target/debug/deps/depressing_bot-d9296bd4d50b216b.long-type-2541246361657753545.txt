@@ -1,0 +1,1 @@
+fn(teloxide::prelude::AutoSend<teloxide::Bot>, teloxide::prelude::Message, Command, Arc<std::sync::Mutex<HashMap<String, Deadline>>>) -> impl Future<Output = Result<(), Box<(dyn std::error::Error + Send + Sync + 'static)>>> {handle_command}
