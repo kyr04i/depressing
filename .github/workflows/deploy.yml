@@ -20,10 +20,10 @@ jobs:
         override: true
 
     - name: Install dependencies
-      run: cargo build --release
+      run: cd depressing_bot && cargo build --release
 
     - name: Run tests
-      run: cargo test
+      run: depressing_bot && cargo test
 
     - name: Deploy
       env:
